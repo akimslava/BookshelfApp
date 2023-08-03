@@ -9,4 +9,7 @@
     <string name="found_results">%d results found</string>
     <string name="enter_a_book_title">Enter a book title</string>
     <string name="bookshelf">Bookshelf</string>
+    <string name="no_title">~No title~</string>
+    <string name="back">back</string>
+    <string name="page_count">Количество страниц: %d</string>
 </resources>

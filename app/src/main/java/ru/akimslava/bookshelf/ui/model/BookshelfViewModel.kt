@@ -7,7 +7,6 @@ import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewModelScope
-import androidx.lifecycle.viewmodel.ViewModelFactoryDsl
 import androidx.lifecycle.viewmodel.initializer
 import androidx.lifecycle.viewmodel.viewModelFactory
 import kotlinx.coroutines.launch
@@ -15,6 +14,7 @@ import retrofit2.HttpException
 import ru.akimslava.bookshelf.BookshelfApplication
 import ru.akimslava.bookshelf.TAG
 import ru.akimslava.bookshelf.data.BooksRepository
+import ru.akimslava.bookshelf.models.BookData
 import ru.akimslava.bookshelf.models.SearchRequestData
 import java.io.IOException
 
@@ -34,8 +34,31 @@ class BookshelfViewModel(
     var searchQuery = mutableStateOf("")
         private set
 
+    var currentBook = mutableStateOf(BookData())
+        private set
+
+    var title = mutableStateOf("BookshelfApp")
+        private set
+
     fun setSearchQuery(newSearchQuery: String) {
         searchQuery.value = newSearchQuery
+    }
+
+    fun setCurrentBook(book: BookData) {
+        Log.i(TAG, book.toString())
+        currentBook.value = book
+    }
+
+    fun setTitle(newTitle: String) {
+        title.value = if (newTitle.length <= 22) {
+            newTitle
+        } else {
+            "${newTitle.take(25)}.."
+        }
+    }
+
+    fun setDefaultTitle() {
+        setTitle("BookshelfApp")
     }
 
     fun searchBooks() {
