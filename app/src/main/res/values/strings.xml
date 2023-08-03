@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Bookshelf</string>
+    <string name="no_internet_connection">No internet connection!</string>
+    <string name="search_button">search button</string>
+    <string name="retry">Retry</string>
+    <string name="no_image">No image</string>
+    <string name="home_screen_plug">Enter a book title and click search!</string>
+    <string name="search_in_progress">Search in progress…</string>
+    <string name="found_results">%d results found</string>
+    <string name="enter_a_book_title">Enter a book title</string>
+    <string name="bookshelf">Bookshelf</string>
+</resources>
